@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { Badge } from "./ui/badge";
-import { BathIcon, Bed, BedIcon, Globe } from "lucide-react";
+import { BathIcon, Bed, BedIcon, DollarSign, EyeIcon, Globe, Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { Label } from "./ui/label";
@@ -182,7 +182,7 @@ export default function PropertyCarousel({
               <div className="p-1">
                 <Card>
                   <CardHeader>
-                    <AspectRatio ratio={9 / 9}>
+                    <AspectRatio ratio={16 / 9}>
                       <Image
                         alt={freelancer.name}
                         src={`/${freelancer.src}`}
@@ -191,17 +191,9 @@ export default function PropertyCarousel({
                       />
                     </AspectRatio>
 
-                    <div className="flex items-center w-full  justify-between">
-                      <div className="text-lg font-semibold">
-                        ${freelancer.price}
-                      </div>
+ 
 
-                      <small className="text-xs font-medium leading-none">
-                        HD: {freelancer.honestDoorPrice}
-                      </small>
-                    </div>
-
-                    <div className="flex w-full justify-between items-center">
+                    <div className="flex w-full justify-between items-center p-2">
                       <Badge variant="outline">
                         {" "}
                         <BedIcon />
@@ -217,36 +209,30 @@ export default function PropertyCarousel({
                       <Label>{freelancer.sqft}</Label>
                     </div>
 
-                    <Separator className="my-2" />
-
-                    <div className='flex w-full'>
-<Button className='basis-1/2'  variant='outline' onClick={() => {
-         setSelectedProperty(freelancer);
-                      setOpenDialog(true);
-               
-                    }
-                    }>
-                      View Profile
-                    </Button>
+                  
+                    <div className='flex w-full p-4'>
 
 
-                    <Button className='basis-1/2' variant='secondary' onClick={() => {
-                      setContactPropertyOwnerDialog(true);
-                      setSelectedProperty(freelancer);
-                    }
-                    }>
-                      Contact
-                    </Button>
+
+        
 </div>
 
 
                     <Tabs defaultValue="Good" className="w-full h-[400px]">
-                      <TabsList>
-                        <TabsTrigger value="Good">Good</TabsTrigger>
-                        <TabsTrigger value="Bad">Bad</TabsTrigger>
-                        <TabsTrigger value="Ugly">Ugly</TabsTrigger>
-                        <TabsTrigger value="Pricing">Pricing</TabsTrigger>
+                      <TabsList className='w-full'>
+                        <TabsTrigger className=" basis-1/2" value="About">About</TabsTrigger>
+
+                        <TabsTrigger className=" basis-1/2" value="Pricing">Pricing</TabsTrigger>
+
                       </TabsList>
+
+                      <TabsContent value="About">
+                        <ul>
+                          {freelancer.good.map((good) => (
+                            <li key={good}>{good}</li>
+                          ))}
+                        </ul>
+                      </TabsContent>
                       <TabsContent value="Good">
                         <ul>
                           {freelancer.good.map((good) => (
@@ -271,15 +257,13 @@ export default function PropertyCarousel({
                         </ul>
                       </TabsContent>
                       <TabsContent value="Pricing">
-                        <Table>
-                          <TableCaption>
-                            Pricing Details for Property
-                          </TableCaption>
+                        <Table className='text-xs'>
+        
                           <TableHeader>
                             <TableRow>
                               <TableHead>Item</TableHead>
-                              <TableHead colSpan={2}>Details</TableHead>
-                              <TableHead className="text-right">
+                              
+                              <TableHead  colSpan={3} className="text-right">
                                 Amount
                               </TableHead>
                             </TableRow>
@@ -289,8 +273,8 @@ export default function PropertyCarousel({
                               <TableCell className="font-medium">
                                 {"Market Comp"}
                               </TableCell>
-                              <TableCell colSpan={2}>Honest Door</TableCell>
-                              <TableCell className="text-right">
+                             
+                              <TableCell  colSpan={3} className="text-right">
                                 {freelancer.honestDoorPrice}
                               </TableCell>
                             </TableRow>
@@ -299,18 +283,8 @@ export default function PropertyCarousel({
                               <TableCell className="font-medium">
                                 {"Defects"}
                               </TableCell>
-                              <TableCell colSpan={2}>
-                                {" "}
-                                <Button
-                                  onClick={() => {
-                                    setSelectedProperty(freelancer);
-                                    setOpenDialog(true);
-                                  }}
-                                >
-                                  Details
-                                </Button>
-                              </TableCell>
-                              <TableCell className="text-right">
+  
+                              <TableCell colSpan={3} className="text-right">
                                 {freelancer.priceAdjustments?.reduce(
                                   (acc, adjustment) => acc + adjustment.amount,
                                   0
@@ -336,11 +310,9 @@ export default function PropertyCarousel({
 
                           <TableFooter>
                             <TableRow>
-                              <TableCell>Price</TableCell>
-                              <TableCell className="text-xs italic" colSpan={2}>
-                                Seller Commission: {freelancer.sellerCommision}%
-                              </TableCell>
-                              <TableCell className="text-right">
+                              <TableCell>{`Price `} <span className='opacity-80 text-xs'>{freelancer.sellerCommision}% SC</span></TableCell>
+                            
+                              <TableCell colSpan={3} className="text-right">
                                 ${freelancer.price}
                               </TableCell>
                             </TableRow>
@@ -365,7 +337,23 @@ export default function PropertyCarousel({
                       </TabsContent>
                     </Tabs>
 
-                    <Separator className="my-2" />
+                  <div className='flex w-full'>
+                    <Button className='basis-1/2'  variant='outline' onClick={() => {
+                      setOpenDialog(true);
+                      setSelectedProperty(freelancer);
+                    }
+                    }>
+                      More Details
+                    </Button>
+
+                    <Button className='basis-1/2' variant='secondary' onClick={() => {
+                      setContactPropertyOwnerDialog(true);
+                      setSelectedProperty(freelancer);
+                    }
+                    }>
+                      Contact
+                    </Button>
+                    </div>
                   </CardHeader>
                   <CardContent className="flex flex-col items-center justify-center  w-full p-6"></CardContent>
                 </Card>

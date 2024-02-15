@@ -263,8 +263,7 @@ export default function Home() {
 
 
 
-      <div id="backstory" className="mb-14" />
-      <BackStory />
+
 
       <div id="projects" className="mb-14" />
 
@@ -286,11 +285,7 @@ export default function Home() {
             answer:
               "Right now we are not charging anything. We are validating that this is a helpful product.",
           },
-          {
-            question: "What do you charge?",
-            answer:
-              "Right now we are not charging anything. We are validating that this is a helpful product.",
-          },
+
         ]}
       />
     </main>
