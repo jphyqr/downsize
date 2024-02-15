@@ -27,8 +27,8 @@ export default function TechTabs({items}:TechTabProps) {
 
     const [activeTab, setActiveTab] = useState<TabItems | null>(items[0])
 
-return <div className='flex flex-col w-full mt-8 border  border-gray-800   rounded-xl  h-full '>
-        <div className='flex w-full overflow-x-scroll border-b  px-2 '>
+return <div className='flex flex-col w-full mt-8 border  border-gray-800   h-full '>
+        <div className='flex w-full overflow-x-scroll  border-b  px-2 '>
             {items.map((tab)=> {
                
                 return (
@@ -42,7 +42,7 @@ return <div className='flex flex-col w-full mt-8 border  border-gray-800   round
                 
                  
                      <Small   
-                    className={`text-center  ml-3  ${tab.key==activeTab?.key?'opacity-100':'opacity-80'} `}
+                    className={`text-center hidden   sm:flex  ml-3  ${tab.key==activeTab?.key?'opacity-100':'opacity-80'} `}
                     >{tab.label}</Small>
                     </div>
                     
@@ -56,9 +56,11 @@ return <div className='flex flex-col w-full mt-8 border  border-gray-800   round
 
         <div className='flex w-full justify-between items-center p-4 border-b border-gray-800'>
         <Muted>{activeTab?.description}</Muted>
-        {activeTab?.href&&
-        <Link  href={activeTab?.href} className='text-blue-800 hover:text-blue-900'><Badge variant='secondary'>See All<ArrowTopRightIcon className='inline-block ml-3'/></Badge></Link>}</div>
-        <div className='flex flex-col w-full  mt-14  rounded-xl p-4 items-center h-full'>
+        {/* {activeTab?.href&&
+        <Link  href={activeTab?.href} className='text-blue-800 hover:text-blue-900'><Badge variant='secondary'>See All<ArrowTopRightIcon className='inline-block ml-3'/></Badge></Link>}
+         */}
+        </div>
+        <div className='flex flex-col w-full  mt-14    items-center h-full'>
             {activeTab&&activeTab.component}
         </div>
         

@@ -29,7 +29,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
                    <NavBar/>
-                   <main  className=' py-5 md:py-50  md:px-5 lg:px-16'>
+                   <main  className=' py-5 md:py-50  '>
         {children}
         <Toaster />
         </main>

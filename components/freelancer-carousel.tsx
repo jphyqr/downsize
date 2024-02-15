@@ -185,10 +185,10 @@ const [contactFreelancerDialog, setContactFreelancerDialog] = useState(false);
 
     ))}
     </div>
-      <Carousel className="w-full max-w-4xl">
+      <Carousel className="w-3/4 max-w-4xl">
         <CarouselContent>
           {freelancersWhoHaveAllMustHave1s.map((freelancer, index) => (
-            <CarouselItem key={index} className="basis-1/2">
+               <CarouselItem key={index} className="basis-full sm:basis-1/2">
               <div className="p-1">
                 <Card>
                   <CardHeader>

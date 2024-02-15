@@ -175,7 +175,7 @@ export default function PropertyCarousel({
         </DialogContent>
       </Dialog>
 
-      <Carousel className="w-full max-w-4xl">
+      <Carousel className="w-3/4 max-w-4xl">
         <CarouselContent>
           {properties.map((freelancer, index) => (
             <CarouselItem key={index} className="basis-full sm:basis-1/2">

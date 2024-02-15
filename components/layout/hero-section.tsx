@@ -59,7 +59,7 @@ export default function HeroSection({
 
     return(
 
-        <section className='flex flex-col  md:grid md:grid-cols-2 md:gap-20 mb-72 '>
+        <section className='flex flex-col px-4 md:grid md:grid-cols-2 md:gap-20 mb-72 '>
 
 
         <div className='flex flex-col p-10 md:p-0  items-center md:items-start justify-center  md:h-[600px] order-2 md:order-1    '>

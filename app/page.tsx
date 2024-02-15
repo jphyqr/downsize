@@ -254,9 +254,13 @@ export default function Home() {
         videoAltText="In lui of a VSL, here is some edutainment on SEO so you can read between the lines of my personality.  May update to a VSL after I get a haircut."
       />
 
-      <Lead>
+
+<section className='p-4'>
+<Lead>
         <strong>Downsizing sucks,</strong> you are on the brink of a new chapter, but the burden of selling your home is too much to bear.  The current ecosystem is great for selling newly renovated places with great photos.. but what if you are still living there?  The good news is there are many people out there who dont care.  Dont waste all your money trying to make your house perfect to appease the current platforms like MLS and Meta Marketplace.  List your home quietly and see if you can find a buyer who is willing to take it as is.  We dont index your property by address.  Be candid about the state of the house and the issues and if you change your mind and decide to renovate, great.  
       </Lead>
+</section>
+
 
 
       <div id="backstory" className="mb-14" />
