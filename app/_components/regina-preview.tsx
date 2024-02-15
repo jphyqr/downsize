@@ -189,94 +189,97 @@ items={[
                     },
                 ]
             } />},
-            {
-                key:'Downsize Services',
-                label:'Downsize Services',
-                icon: <HelpingHand/>,
-                description: 'Homes for sale by owner, no realtor fees',
-                href: 'regina/rentals',
-                component:<FreelanceCarousel freelancers={
-                    [
+            // {
+            //     key:'Downsize Services',
+            //     label:'Downsize Services',
+            //     icon: <HelpingHand/>,
+            //     description: 'Homes for sale by owner, no realtor fees',
+            //     href: 'regina/rentals',
+            //     component:<FreelanceCarousel freelancers={
+            //         [
          
-                        {
-                            name: 'encore',
-                            id: '456',
-                            intro: 'Facebook seller',
-                            src: 'encore.png',
-                            degree: 'Tile Setter',
-                            school: 'Sask Polytech',
-                            rate: 40,
-                            services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
-                        },
-                    ]
-                } />},
-                {
-                    key:'Pet Friendly Rentals',
-                    label:'Pet Friendly Rentals',
-                    icon: <Paintbrush/>,
-                    description: 'Homes for sale by owner, no realtor fees',
-                    href: 'regina/rentals',
-                    component:<FreelanceCarousel freelancers={
-                        [
+            //             {
+            //                 name: 'encore',
+            //                 id: '456',
+            //                 intro: 'Facebook seller',
+            //                 src: 'encore.png',
+            //                 degree: 'Tile Setter',
+            //                 school: 'Sask Polytech',
+            //                 rate: 40,
+            //                 services: ['clean floor', 'pack boxes' ],
+            //                 email:'jphyqr@gmail.com',
+            //                 phone: '306-555-5555',
+            //             },
+            //         ]
+            //     } />},
+            //     {
+            //         key:'Pet Friendly Rentals',
+            //         label:'Pet Friendly Rentals',
+            //         icon: <Paintbrush/>,
+            //         description: 'Homes for sale by owner, no realtor fees',
+            //         href: 'regina/rentals',
+            //         component:<FreelanceCarousel freelancers={
+            //             [
              
-                            {
-                                name: 'Michael',
-                                id: '456',
-                                intro: 'Full service handly man with excellent tile work',
-                                src: 'michael.png',
-                                degree: 'Tile Setter',
-                                school: 'Sask Polytech',
-                                rate: 40,
-                                services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
-                                
-                            },
-                        ]
-                    } />},
+            //                 {
+            //                     name: 'Michael',
+            //                     id: '456',
+            //                     intro: 'Full service handly man with excellent tile work',
+            //                     src: 'michael.png',
+            //                     degree: 'Tile Setter',
+            //                     school: 'Sask Polytech',
+            //                     rate: 40,
+            //                     services: ['clean floor', 'pack boxes' ],
+            //                     email:'jphyqr@gmail.com',
+            //                     phone: '306-555-5555',
+            //                 },
+            //             ]
+            //         } />},
 
-                    {
-                        key:'Monthly Furnished Rentals',
-                        label:'Monthly Furnished Rentals',
-                        icon: <Paintbrush/>,
-                        description: 'Homes for sale by owner, no realtor fees',
-                        href: 'regina/rentals',
-                        component:<FreelanceCarousel freelancers={
-                            [
+            //         {
+            //             key:'Monthly Furnished Rentals',
+            //             label:'Monthly Furnished Rentals',
+            //             icon: <Paintbrush/>,
+            //             description: 'Homes for sale by owner, no realtor fees',
+            //             href: 'regina/rentals',
+            //             component:<FreelanceCarousel freelancers={
+            //                 [
                  
-                                {
-                                    name: 'Michael',
-                                    id: '456',
-                                    intro: 'Full service handly man with excellent tile work',
-                                    src: 'michael.png',
-                                    degree: 'Tile Setter',
-                                    school: 'Sask Polytech',
-                                    rate: 40,
-                                    services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
+            //                     {
+            //                         name: 'Michael',
+            //                         id: '456',
+            //                         intro: 'Full service handly man with excellent tile work',
+            //                         src: 'michael.png',
+            //                         degree: 'Tile Setter',
+            //                         school: 'Sask Polytech',
+            //                         rate: 40,
+            //                         services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
                                     
-                                },
-                            ]
-                        } />},
-                {
-                    key:'Referred Tennants',
-                    label:'Referred Tennants',
-                    icon: <Paintbrush/>,
-                    description: 'Homes for sale by owner, no realtor fees',
-                    href: 'regina/rentals',
-                    component:<FreelanceCarousel freelancers={
-                        [
+            //                     },
+            //                 ]
+            //             } />},
+            //     {
+            //         key:'Referred Tennants',
+            //         label:'Referred Tennants',
+            //         icon: <Paintbrush/>,
+            //         description: 'Homes for sale by owner, no realtor fees',
+            //         href: 'regina/rentals',
+            //         component:<FreelanceCarousel freelancers={
+            //             [
              
-                            {
-                                name: 'Michael',
-                                id: '456',
-                                intro: 'Full service handly man with excellent tile work',
-                                src: 'michael.png',
-                                degree: 'Tile Setter',
-                                school: 'Sask Polytech',
-                                rate: 40,
-                                services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
+            //                 {
+            //                     name: 'Michael',
+            //                     id: '456',
+            //                     intro: 'Full service handly man with excellent tile work',
+            //                     src: 'michael.png',
+            //                     degree: 'Tile Setter',
+            //                     school: 'Sask Polytech',
+            //                     rate: 40,
+            //                     services: ['Tile', 'Drywall', 'Painting', 'Plumbing', 'Electrical']
                                 
-                            },
-                        ]
-                    } />},
+            //                 },
+            //             ]
+            //         } />},
 ]}
 />
 
