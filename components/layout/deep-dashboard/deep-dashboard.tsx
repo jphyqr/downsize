@@ -32,7 +32,7 @@ return (
     <section id="section2" className='flex flex-col w-full p-4   h-[1500px]  '>
 
         <div className='flex w-full overflow-x-scroll '>
-            {topTabs.map((tab)=> {
+            {/* {topTabs.map((tab)=> {
                
                 return (
                     <div
@@ -59,7 +59,7 @@ return (
                 )
             }
            
-               )}     
+               )}      */}
         </div>
 
         <Separator className='w-full mb-20'/>

@@ -17,7 +17,7 @@ export default function Faqs({faqs}:FaqProps) {
 return ( 
 
     <section className='w-full p-4  '>
-        <TypeH2>John FAQs</TypeH2>
+        <TypeH2>FSBO FAQs</TypeH2>
     <Accordion type="single" collapsible className="w-full">
   {
  faqs.map((faq)=> { 

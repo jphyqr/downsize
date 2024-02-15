@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "../ui/dialog";
 import * as React from "react"
  
 import { cn, scrolltoHash } from "@/lib/utils"
@@ -20,44 +27,47 @@ import {
 import useScroll from "@/lib/hooks/use-scroll";
 import { ModeToggle } from "../dark-toggle";
 import { Button } from "../ui/button";
+import { ListPropertyForm } from "../list-property-form";
+import { set } from "react-hook-form";
+import { Lead } from "../typography/lead";
 
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
+    title: "Regina",
     href: "/docs/primitives/alert-dialog",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+  // {
+  //   title: "Saskatoon",
+  //   href: "/docs/primitives/hover-card",
+  //   description:
+  //     "For sighted users to preview content available behind a link.",
+  // },
+  // {
+  //   title: "Edmonton",
+  //   href: "/docs/primitives/progress",
+  //   description:
+  //     "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  // },
+  // {
+  //   title: "Calgary",
+  //   href: "/docs/primitives/scroll-area",
+  //   description: "Visually or semantically separates content.",
+  // },
+  // {
+  //   title: "Winnipeg",
+  //   href: "/docs/primitives/tabs",
+  //   description:
+  //     "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  // },
+  // {
+  //   title: "Brandon",
+  //   href: "/docs/primitives/tooltip",
+  //   description:
+  //     "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  // },
 ]
  
 
@@ -67,6 +77,8 @@ export default function NavBar() {
 
 
   return (
+    <>
+
     <NavigationMenu   className={`fixed top-0 min-w-full flex justify-center ${
       scrolled
         ? "border-b border-gray-600 bg-black/50 backdrop-blur-xl"
@@ -81,7 +93,7 @@ export default function NavBar() {
               height="30"
               className="mr-2 rounded-sm"
             ></Image> */}
-            <p className='bold'>QBV1</p>
+            <p className='bold'>FSBO</p>
           </Link>
       <NavigationMenuList>
         <NavigationMenuItem>
@@ -96,28 +108,28 @@ export default function NavBar() {
                   >
                     {/* <Icons.logo className="h-6 w-6" /> */}
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      QBV1
+                      Downsizers
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Product Engineering.  0 to 1 Design and Development
+                      Help you downsize your home
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/new-venture-warmup" title="New Venture Warmup">
-                Technical SEO Planning and Setup for salvagable domains
+              <ListItem href="/new-venture-warmup" title="Private Listings">
+                Help you sell your home
               </ListItem>
-              <ListItem href="/next-js-developer" title="Web Development">
-                Custom NextJS Builds
+              <ListItem href="/next-js-developer" title="Resell Services">
+                Sell all your stuff
               </ListItem>
-              <ListItem href="/niche-tools-for-seo" title="Niche Tools">
-                Custom niche components designed for linkability, user signal and SEO
+              <ListItem href="/niche-tools-for-seo" title="Find Help">
+               Find people to help
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Cities</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -133,12 +145,15 @@ export default function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem >
-          <Link  href="/contact-john-hashem" legacyBehavior passHref>
+        <Button className={navigationMenuTriggerStyle()} onClick={()=>scrolltoHash('hero')} variant="link">For Home Sellers</Button>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem >
+          <Link  href="/for-sellers" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact Me
+              For Sellers
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem >
         <NavigationMenuItem >
         <Button className={navigationMenuTriggerStyle()} onClick={()=>scrolltoHash('faqs')} variant="link">Faqs</Button>
@@ -154,6 +169,7 @@ export default function NavBar() {
         <ModeToggle  />
 
     </NavigationMenu>
+    </>
   )
 
 }

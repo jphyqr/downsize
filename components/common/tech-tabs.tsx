@@ -57,7 +57,7 @@ return <div className='flex flex-col w-full mt-8 border  border-gray-800   round
         <div className='flex w-full justify-between items-center p-4 border-b border-gray-800'>
         <Muted>{activeTab?.description}</Muted>
         {activeTab?.href&&
-        <Link target='_blank' href={activeTab?.href} className='text-blue-800 hover:text-blue-900'><Badge variant='secondary'>Visit App<ArrowTopRightIcon className='inline-block ml-3'/></Badge></Link>}</div>
+        <Link  href={activeTab?.href} className='text-blue-800 hover:text-blue-900'><Badge variant='secondary'>See All<ArrowTopRightIcon className='inline-block ml-3'/></Badge></Link>}</div>
         <div className='flex flex-col w-full  mt-14  rounded-xl p-4 items-center h-full'>
             {activeTab&&activeTab.component}
         </div>
