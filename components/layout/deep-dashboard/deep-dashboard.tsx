@@ -62,9 +62,7 @@ return (
                )}      */}
         </div>
 
-        <Separator className='w-full mb-20'/>
 
-        {activeTab?.description&& <Lead>{activeTab?.description}</Lead>}
         <div className='flex flex-col w-full   rounded-xl items-center  flex-grow '>
             {activeTab&&activeTab.component}
         </div>
