@@ -28,7 +28,7 @@ export default function TechTabs({items}:TechTabProps) {
     const [activeTab, setActiveTab] = useState<TabItems | null>(items[0])
 
 return <div className='flex flex-col w-full mt-8 border  border-gray-800   h-full '>
-        <div className='flex w-full overflow-x-scroll  border-b  px-2 '>
+        <div className='flex w-full   border-b  px-2 '>
             {items.map((tab)=> {
                
                 return (

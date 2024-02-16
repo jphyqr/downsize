@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { Badge } from "./ui/badge";
-import { Globe, Hand, Minus, MinusIcon, XIcon } from "lucide-react";
+import { Car, Globe, Hammer, Hand, Minus, MinusIcon, Truck, XIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import {  SmallJobSelect } from "./small-job-select";
 import { useState } from "react";
@@ -35,6 +35,7 @@ import {
 } from "./ui/dialog";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { ContactFreelancerForm } from "./contact-freelancer-form";
+import { Label } from "@radix-ui/react-dropdown-menu";
 export type Freelancer = {
   name: string;
   id: string;
@@ -47,7 +48,10 @@ export type Freelancer = {
   images?: string[];
   email:string;
   phone:string;
+  tools: Tools[];
 };
+
+export type Tools = "hammer" | "screwdriver" | "wrench" | "drill" | "saw" | "truck" | "car" | "trailer" | "mop"
 
 export type SmallJobs =
   | "clean floor"
@@ -68,6 +72,7 @@ export default function FreelanceCarousel({
   freelancers: Freelancer[];
 }) {
   const [mustHave1, setMustHave1] = useState<SmallJobs[]>([]);
+  const [mustHave2, setmustHave2] = useState<Tools[]>([]);
 const [contactFreelancerDialog, setContactFreelancerDialog] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedFreelancer, setSelectedFreelancer] = useState<Freelancer | null>(
@@ -194,11 +199,9 @@ const [contactFreelancerDialog, setContactFreelancerDialog] = useState(false);
                   <CardHeader>
  
 <div className='flex w-full justify-between items-center'>
-<Avatar>
-      <AvatarImage src="/rams.png" alt="@shadcn" />
-      <AvatarFallback>NI</AvatarFallback>
-    </Avatar>
 
+
+<Label className='text-muted-foreground'>${freelancer.rate}/hr</Label>
     <div className="flex flex-col">
 
     <div className="text-lg font-semibold text-right">
@@ -242,7 +245,7 @@ const [contactFreelancerDialog, setContactFreelancerDialog] = useState(false);
 
                     <Separator className="my-2" />
                     <div className="flex flex-wrap w-full ">
-                      <Hand className="mr-2" />
+                     
                       {freelancer.services.map((city) => (
                         <Badge
                           
@@ -264,6 +267,29 @@ const [contactFreelancerDialog, setContactFreelancerDialog] = useState(false);
                     </div>
 
                     <Separator className="my-2" />
+
+                    <div className="flex flex-wrap w-full ">
+                     
+                     {freelancer.tools.map((city) => (
+                       <Badge
+                         
+                         className={`mr-2 mb-2 opacity-80 hover:cursor-pointer hover:opacity-100 transition-all ${mustHave2.includes(city) ? "opacity-100" : "opacity-80"}`}
+                         variant={"outline"}
+                         key={city}
+                         onClick={() =>{
+                            //add to must have if not in list
+                           if (!mustHave2.includes(city)) {
+                             setmustHave2([...mustHave2, city]);
+                           } else{
+                             setmustHave2(mustHave2.filter((item) => item !== city));
+                           }
+                         } }
+                       >
+                         {city}
+                       </Badge>
+                     ))}
+                   </div>
+
                   </CardHeader>
                   <CardContent className="flex flex-col items-center justify-center  w-full p-6"></CardContent>
                 </Card>

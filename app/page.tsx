@@ -200,7 +200,7 @@ export default function Home() {
             key: "Regina",
             icon: <Code />,
             label: "Regina",
-            description: "Regina, SK",
+            description: "As Is, Off the Market Home Sales",
             component: <ReginaPreview />,
           },
           {
